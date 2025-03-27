@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRO CYCLE - Prediction Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">AGRO CYCLE</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data-input.html">Data Input</a></li>
+        <li><a href="results.html" class="active">Results</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="section-heading reveal">Prediction Results</h1>
+      <p class="section-subheading reveal delay-1">
+        Based on your input data, our model has generated the following yield prediction and recommendations.
+      </p>
+    </div>
+  </section>
+
+  <section class="results-section">
+    <div class="container">
+      <div class="loading-container" id="loadingContainer">
+        <div class="loader"></div>
+        <p>Analyzing data and generating results...</p>
+      </div>
+
+      <!-- Main Results -->
+      <div class="results-content" id="resultsContent" style="display: none;">
+        <div class="results-grid">
+          <!-- Prediction Card -->
+          <div class="result-card reveal delay-1">
+            <div class="result-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7CB342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"></path>
+                <path d="M9 10V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-5"></path>
+                <circle cx="9" cy="15" r="5"></circle>
+                <path d="m9 12 1.5 1.5"></path>
+              </svg>
+              <h2>Yield Prediction</h2>
+            </div>
+
+            <div class="prediction-result">
+              <div class="prediction-value" id="yieldValue">0</div>
+              <div class="prediction-unit">kg/ha</div>
+            </div>
+
+            <div class="prediction-range">
+              <div class="range-label">Prediction Range:</div>
+              <div class="range-value" id="yieldRange">0 - 0 kg/ha</div>
+            </div>
+
+            <div class="confidence-meter">
+              <div class="confidence-label">Confidence Level:</div>
+              <div class="confidence-bar">
+                <div class="confidence-fill" id="confidenceFill"></div>
+              </div>
+              <div class="confidence-value" id="confidenceValue">0%</div>
+            </div>
+          </div>
+
+          <!-- Factors Card -->
+          <div class="result-card reveal delay-2">
+            <div class="result-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64B5F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"></path>
+                <path d="m19 9-5 5-4-4-3 3"></path>
+              </svg>
+              <h2>Impact Factors</h2>
+            </div>
+
+            <div class="factors-list" id="factorsList">
+              <!-- Will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="recommendations-card reveal delay-3">
+          <div class="result-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8D6E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <h2>Recommendations</h2>
+          </div>
+
+          <div class="recommendations-list" id="recommendationsList">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions-container reveal delay-4">
+          <a href="insights.html" class="btn btn-primary">
+            View Detailed Insights
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="data-input.html" class="btn btn-secondary">
+            Modify Input Data
+          </a>
+        </div>
+      </div>
+
+      <!-- No Data Message -->
+      <div class="no-data-message" id="noDataMessage" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#8D6E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+          <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path>
+          <path d="m6 16 6-6 6 6"></path>
+        </svg>
+        <h2>No Data Available</h2>
+        <p>Please input your crop data first to see prediction results.</p>
+        <a href="data-input.html" class="btn btn-primary">
+          Go to Data Input
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo and Description -->
+        <div>
+          <a href="index.html" class="logo">AGRO CYCLE</a>
+          <p class="footer-description">
+            Advanced crop yield prediction platform using machine learning to enhance agricultural productivity and sustainability.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-input.html">Data Input</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+          <address class="footer-address">
+            <p>GM University</p>
+            <p>P.B. Road, Davanagere</p>
+            <p>Davangere - 577006</p>
+            <p>Karnataka</p>
+            <p style="margin-top: 1rem">
+              <a href="mailto:info@gmu.ac.in">info@gmu.ac.in</a>
+            </p>
+            <p>
+              <a href="tel:+916361219778">+91 6361 219 778</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> AGRO CYCLE. All rights reserved.</p>
+        <p>Designed & Developed by <span style="font-weight: 500; color: var(--agro-green-dark)">RAJN TEAM</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRO CYCLE - Crop Yield Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">AGRO CYCLE</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="data-input.html">Data Input</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="hero-content reveal">
+          <h1 class="hero-title">Crop Yield Prediction Using Machine Learning</h1>
+          <p class="hero-subtitle">
+            Leverage cutting-edge technology to optimize your farming practices and maximize crop yields. Our machine learning model analyzes soil, weather, and historical data to provide accurate yield predictions.
+          </p>
+          <div>
+            <a href="data-input.html" class="btn btn-primary">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary">
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="hero-img-container reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Crop Field" class="hero-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Our Features</h2>
+        <p class="section-description">
+          AGRO CYCLE combines advanced machine learning algorithms with agricultural expertise to provide farmers with actionable insights and predictions.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+              <path d="M12 8a2.828 2.828 0 1 1 0 5.656 2.828 2.828 0 0 1 0-5.656"></path>
+              <path d="M17 18.87V16a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v2.875"></path>
+              <path d="M17 18.875C17 19.496 16.5 20 15.875 20H8.125C7.5 20 7 19.496 7 18.875V17c0-.621.5-1.125 1.125-1.125h7.75c.625 0 1.125.504 1.125 1.125v1.875Z"></path>
+              <path d="M12 16v4"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Accurate Yield Prediction</h3>
+          <p class="feature-description">
+            Our advanced machine learning algorithms analyze multiple factors to predict crop yields with high accuracy, helping farmers make informed decisions.
+          </p>
+        </div>
+
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Weather Impact Analysis</h3>
+          <p class="feature-description">
+            Understand how weather patterns affect your crop performance with detailed analysis and recommendations for adaptation strategies.
+          </p>
+        </div>
+
+        <div class="feature-card reveal delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m2 22 1-1h3l9-9"></path>
+              <path d="M3 21v-3l9-9"></path>
+              <path d="m15 6 3-3 3 3-3 3Z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Soil Health Insights</h3>
+          <p class="feature-description">
+            Get actionable recommendations for soil management based on comprehensive analysis of soil nutrients, pH levels, and other critical factors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-description">
+          Using AGRO CYCLE is simple. Follow these steps to get accurate predictions and insights for your crops.
+        </p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step reveal delay-1">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Input Your Data</h3>
+            <p class="step-description">
+              Enter information about your soil conditions, weather patterns, and crop details through our user-friendly interface.
+            </p>
+          </div>
+        </div>
+
+        <div class="step reveal delay-2">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Get Predictions</h3>
+            <p class="step-description">
+              Our machine learning model processes your data and generates accurate yield predictions along with confidence levels.
+            </p>
+          </div>
+        </div>
+
+        <div class="step reveal delay-3">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Review Insights</h3>
+            <p class="step-description">
+              Explore detailed insights and visualizations about factors affecting your crop yield and recommendations for improvement.
+            </p>
+          </div>
+        </div>
+
+        <div class="step reveal delay-4">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">Implement Recommendations</h3>
+            <p class="step-description">
+              Apply the suggested strategies to optimize your farming practices and maximize crop productivity and sustainability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" style="padding: 4rem 0;">
+    <div class="container" style="text-align: center;">
+      <div class="reveal">
+        <h2 class="section-title">Ready to Optimize Your Crop Yield?</h2>
+        <p class="section-description" style="margin-bottom: 2rem;">
+          Start using AGRO CYCLE today and unlock the power of data-driven farming for better yields and sustainable agriculture.
+        </p>
+        <a href="data-input.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+          Start Now
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo and Description -->
+        <div>
+          <a href="index.html" class="logo">AGRO CYCLE</a>
+          <p class="footer-description">
+            Advanced crop yield prediction platform using machine learning to enhance agricultural productivity and sustainability.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-input.html">Data Input</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+          <address class="footer-address">
+            <p>GM University</p>
+            <p>P.B. Road, Davanagere</p>
+            <p>Davangere - 577006</p>
+            <p>Karnataka</p>
+            <p style="margin-top: 1rem">
+              <a href="mailto:info@gmu.ac.in">info@gmu.ac.in</a>
+            </p>
+            <p>
+              <a href="tel:+916361219778">+91 6361 219 778</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> AGRO CYCLE. All rights reserved.</p>
+        <p>Designed & Developed by <span style="font-weight: 500; color: var(--agro-green-dark)">RAJN TEAM</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

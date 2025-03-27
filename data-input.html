@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRO CYCLE - Data Input</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">AGRO CYCLE</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data-input.html" class="active">Data Input</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="section-heading reveal">Input Your Data</h1>
+      <p class="section-subheading reveal delay-1">
+        Provide details about your farm's conditions to get accurate yield predictions. Fields marked with * are required.
+      </p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container form-container">
+      <form id="cropDataForm" class="reveal delay-2">
+        <!-- Weather Data -->
+        <div class="form-card">
+          <h2 class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64B5F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path>
+            </svg>
+            Weather Data
+          </h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="temperature" class="form-label">Temperature (°C) *</label>
+              <input
+                type="number"
+                id="temperature"
+                name="temperature"
+                placeholder="e.g., 25"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="rainfall" class="form-label">Rainfall (mm) *</label>
+              <input
+                type="number"
+                id="rainfall"
+                name="rainfall"
+                placeholder="e.g., 150"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="humidity" class="form-label">Humidity (%) *</label>
+              <input
+                type="number"
+                id="humidity"
+                name="humidity"
+                placeholder="e.g., 65"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="windSpeed" class="form-label">Wind Speed (km/h)</label>
+              <input
+                type="number"
+                id="windSpeed"
+                name="windSpeed"
+                placeholder="e.g., 10"
+                class="form-input"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Soil Data -->
+        <div class="form-card">
+          <h2 class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8D6E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m2 22 1-1h3l9-9"></path>
+              <path d="M3 21v-3l9-9"></path>
+              <path d="m15 6 3-3 3 3-3 3Z"></path>
+              <path d="M6 15h.01"></path>
+              <path d="M6 12h.01"></path>
+              <path d="M3 6l1.5 1.5"></path>
+              <path d="M6 3 7.5 4.5"></path>
+              <path d="M7.5 7.5 9 9"></path>
+              <path d="M13 7 8 2"></path>
+            </svg>
+            Soil Data
+          </h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="soilPh" class="form-label">Soil pH *</label>
+              <input
+                type="number"
+                id="soilPh"
+                name="soilPh"
+                placeholder="e.g., 6.5"
+                class="form-input"
+                step="0.1"
+                min="0"
+                max="14"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="nitrogen" class="form-label">Nitrogen (kg/ha) *</label>
+              <input
+                type="number"
+                id="nitrogen"
+                name="nitrogen"
+                placeholder="e.g., 120"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="phosphorus" class="form-label">Phosphorus (kg/ha) *</label>
+              <input
+                type="number"
+                id="phosphorus"
+                name="phosphorus"
+                placeholder="e.g., 45"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="potassium" class="form-label">Potassium (kg/ha) *</label>
+              <input
+                type="number"
+                id="potassium"
+                name="potassium"
+                placeholder="e.g., 80"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Crop Data -->
+        <div class="form-card">
+          <h2 class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7CB342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 11V2a10 10 0 0 0-5 18.66"></path>
+              <path d="M12 11V2a10 10 0 0 1 5 18.66"></path>
+              <path d="M12 11a12.1 12.1 0 0 1 10 3"></path>
+              <path d="M12 11a12.1 12.1 0 0 0-10 3"></path>
+            </svg>
+            Crop Data
+          </h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cropType" class="form-label">Crop Type *</label>
+              <select
+                id="cropType"
+                name="cropType"
+                class="form-input"
+                required
+              >
+                <option value="">Select Crop Type</option>
+                <option value="rice">Rice</option>
+                <option value="wheat">Wheat</option>
+                <option value="maize">Maize</option>
+                <option value="cotton">Cotton</option>
+                <option value="sugarcane">Sugarcane</option>
+                <option value="pulses">Pulses</option>
+                <option value="vegetables">Vegetables</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="growthStage" class="form-label">Growth Stage</label>
+              <select
+                id="growthStage"
+                name="growthStage"
+                class="form-input"
+              >
+                <option value="">Select Growth Stage</option>
+                <option value="seedling">Seedling</option>
+                <option value="vegetative">Vegetative</option>
+                <option value="flowering">Flowering</option>
+                <option value="fruit-development">Fruit Development</option>
+                <option value="maturity">Maturity</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="previousYield" class="form-label">Previous Yield (kg/ha)</label>
+              <input
+                type="number"
+                id="previousYield"
+                name="previousYield"
+                placeholder="e.g., 3500"
+                class="form-input"
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="plantingDate" class="form-label">Planting Date</label>
+              <input
+                type="date"
+                id="plantingDate"
+                name="plantingDate"
+                class="form-input"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="btn-container">
+          <button
+            type="submit"
+            id="submitBtn"
+            class="btn-primary"
+          >
+            Generate Prediction
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo and Description -->
+        <div>
+          <a href="index.html" class="logo">AGRO CYCLE</a>
+          <p class="footer-description">
+            Advanced crop yield prediction platform using machine learning to enhance agricultural productivity and sustainability.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-input.html">Data Input</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+          <address class="footer-address">
+            <p>GM University</p>
+            <p>P.B. Road, Davanagere</p>
+            <p>Davangere - 577006</p>
+            <p>Karnataka</p>
+            <p style="margin-top: 1rem">
+              <a href="mailto:info@gmu.ac.in">info@gmu.ac.in</a>
+            </p>
+            <p>
+              <a href="tel:+916361219778">+91 6361 219 778</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> AGRO CYCLE. All rights reserved.</p>
+        <p>Designed & Developed by <span style="font-weight: 500; color: var(--agro-green-dark)">RAJN TEAM</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRO CYCLE - Data Input</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">AGRO CYCLE</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data-input.html" class="active">Data Input</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="section-heading reveal">Input Your Data</h1>
+      <p class="section-subheading reveal delay-1">
+        Provide details about your farm's conditions to get accurate yield predictions. Fields marked with * are required.
+      </p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container form-container">
+      <form id="cropDataForm" class="reveal delay-2">
+        <!-- Weather Data -->
+        <div class="form-card">
+          <h2 class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64B5F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path>
+            </svg>
+            Weather Data
+          </h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="temperature" class="form-label">Temperature (°C) *</label>
+              <input
+                type="number"
+                id="temperature"
+                name="temperature"
+                placeholder="e.g., 25"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="rainfall" class="form-label">Rainfall (mm) *</label>
+              <input
+                type="number"
+                id="rainfall"
+                name="rainfall"
+                placeholder="e.g., 150"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="humidity" class="form-label">Humidity (%) *</label>
+              <input
+                type="number"
+                id="humidity"
+                name="humidity"
+                placeholder="e.g., 65"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="windSpeed" class="form-label">Wind Speed (km/h)</label>
+              <input
+                type="number"
+                id="windSpeed"
+                name="windSpeed"
+                placeholder="e.g., 10"
+                class="form-input"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Soil Data -->
+        <div class="form-card">
+          <h2 class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8D6E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m2 22 1-1h3l9-9"></path>
+              <path d="M3 21v-3l9-9"></path>
+              <path d="m15 6 3-3 3 3-3 3Z"></path>
+              <path d="M6 15h.01"></path>
+              <path d="M6 12h.01"></path>
+              <path d="M3 6l1.5 1.5"></path>
+              <path d="M6 3 7.5 4.5"></path>
+              <path d="M7.5 7.5 9 9"></path>
+              <path d="M13 7 8 2"></path>
+            </svg>
+            Soil Data
+          </h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="soilPh" class="form-label">Soil pH *</label>
+              <input
+                type="number"
+                id="soilPh"
+                name="soilPh"
+                placeholder="e.g., 6.5"
+                class="form-input"
+                step="0.1"
+                min="0"
+                max="14"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="nitrogen" class="form-label">Nitrogen (kg/ha) *</label>
+              <input
+                type="number"
+                id="nitrogen"
+                name="nitrogen"
+                placeholder="e.g., 120"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="phosphorus" class="form-label">Phosphorus (kg/ha) *</label>
+              <input
+                type="number"
+                id="phosphorus"
+                name="phosphorus"
+                placeholder="e.g., 45"
+                class="form-input"
+                required
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="potassium" class="form-label">Potassium (kg/ha) *</label>
+              <input
+                type="number"
+                id="potassium"
+                name="potassium"
+                placeholder="e.g., 80"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Crop Data -->
+        <div class="form-card">
+          <h2 class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7CB342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 11V2a10 10 0 0 0-5 18.66"></path>
+              <path d="M12 11V2a10 10 0 0 1 5 18.66"></path>
+              <path d="M12 11a12.1 12.1 0 0 1 10 3"></path>
+              <path d="M12 11a12.1 12.1 0 0 0-10 3"></path>
+            </svg>
+            Crop Data
+          </h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cropType" class="form-label">Crop Type *</label>
+              <select
+                id="cropType"
+                name="cropType"
+                class="form-input"
+                required
+              >
+                <option value="">Select Crop Type</option>
+                <option value="rice">Rice</option>
+                <option value="wheat">Wheat</option>
+                <option value="maize">Maize</option>
+                <option value="cotton">Cotton</option>
+                <option value="sugarcane">Sugarcane</option>
+                <option value="pulses">Pulses</option>
+                <option value="vegetables">Vegetables</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="growthStage" class="form-label">Growth Stage</label>
+              <select
+                id="growthStage"
+                name="growthStage"
+                class="form-input"
+              >
+                <option value="">Select Growth Stage</option>
+                <option value="seedling">Seedling</option>
+                <option value="vegetative">Vegetative</option>
+                <option value="flowering">Flowering</option>
+                <option value="fruit-development">Fruit Development</option>
+                <option value="maturity">Maturity</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="previousYield" class="form-label">Previous Yield (kg/ha)</label>
+              <input
+                type="number"
+                id="previousYield"
+                name="previousYield"
+                placeholder="e.g., 3500"
+                class="form-input"
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="plantingDate" class="form-label">Planting Date</label>
+              <input
+                type="date"
+                id="plantingDate"
+                name="plantingDate"
+                class="form-input"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="btn-container">
+          <button
+            type="submit"
+            id="submitBtn"
+            class="btn-primary"
+          >
+            Generate Prediction
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo and Description -->
+        <div>
+          <a href="index.html" class="logo">AGRO CYCLE</a>
+          <p class="footer-description">
+            Advanced crop yield prediction platform using machine learning to enhance agricultural productivity and sustainability.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-input.html">Data Input</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+          <address class="footer-address">
+            <p>GM University</p>
+            <p>P.B. Road, Davanagere</p>
+            <p>Davangere - 577006</p>
+            <p>Karnataka</p>
+            <p style="margin-top: 1rem">
+              <a href="mailto:info@gmu.ac.in">info@gmu.ac.in</a>
+            </p>
+            <p>
+              <a href="tel:+916361219778">+91 6361 219 778</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> AGRO CYCLE. All rights reserved.</p>
+        <p>Designed & Developed by <span style="font-weight: 500; color: var(--agro-green-dark)">RAJN TEAM</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

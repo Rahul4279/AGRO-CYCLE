@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRO CYCLE - Insights & Graphs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">AGRO CYCLE</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data-input.html">Data Input</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="section-heading reveal">Insights & Analytics</h1>
+      <p class="section-subheading reveal delay-1">
+        Visualize how different factors influence crop yield and discover patterns to optimize your farming practices.
+      </p>
+    </div>
+  </section>
+
+  <section class="insights-section">
+    <div class="container">
+      <div class="loading-container" id="insightsLoadingContainer">
+        <div class="loader"></div>
+        <p>Generating insights and visualizations...</p>
+      </div>
+
+      <div class="insights-content" id="insightsContent" style="display: none;">
+        <!-- Charts Section -->
+        <div class="charts-section">
+          <div class="tab-container reveal">
+            <div class="tab-buttons" id="chartTabs">
+              <button class="tab-button active" data-tab="weatherChart">Weather Impact</button>
+              <button class="tab-button" data-tab="soilChart">Soil Factors</button>
+              <button class="tab-button" data-tab="comparisonChart">Yield Comparison</button>
+              <button class="tab-button" data-tab="trendChart">Growth Trends</button>
+            </div>
+            
+            <div class="tab-content">
+              <!-- Weather Impact Chart -->
+              <div class="tab-pane active" id="weatherChart">
+                <div class="chart-card">
+                  <h3 class="chart-title">Weather Impact on Crop Yield</h3>
+                  <div class="chart-container">
+                    <canvas id="weatherImpactChart"></canvas>
+                  </div>
+                  <p class="chart-description">
+                    This chart shows how temperature, rainfall, and humidity affect your crop yield. 
+                    Understanding these relationships helps you adapt to changing weather conditions.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Soil Factors Chart -->
+              <div class="tab-pane" id="soilChart">
+                <div class="chart-card">
+                  <h3 class="chart-title">Soil Nutrients Influence</h3>
+                  <div class="chart-container">
+                    <canvas id="soilNutrientsChart"></canvas>
+                  </div>
+                  <p class="chart-description">
+                    Visualize how different soil nutrients (N, P, K, pH) contribute to your crop's growth and yield potential.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Yield Comparison Chart -->
+              <div class="tab-pane" id="comparisonChart">
+                <div class="chart-card">
+                  <h3 class="chart-title">Yield Comparison with Average</h3>
+                  <div class="chart-container">
+                    <canvas id="yieldComparisonChart"></canvas>
+                  </div>
+                  <p class="chart-description">
+                    Compare your predicted yield with regional averages and top performers for your selected crop type.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Growth Trend Chart -->
+              <div class="tab-pane" id="trendChart">
+                <div class="chart-card">
+                  <h3 class="chart-title">Growth Stage Progression</h3>
+                  <div class="chart-container">
+                    <canvas id="growthTrendChart"></canvas>
+                  </div>
+                  <p class="chart-description">
+                    Track the expected growth progression of your crop through different growth stages based on your input data.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Insights -->
+        <div class="key-insights reveal delay-2">
+          <h2 class="insights-header">Key Insights</h2>
+          
+          <div class="insights-grid">
+            <div class="insight-card">
+              <div class="insight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7CB342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v8"></path>
+                  <path d="m4.93 10.93 1.41 1.41"></path>
+                  <path d="M2 18h2"></path>
+                  <path d="M20 18h2"></path>
+                  <path d="m19.07 10.93-1.41 1.41"></path>
+                  <path d="M22 22H2"></path>
+                  <path d="m16 6-4 4-4-4"></path>
+                  <path d="M16 18a4 4 0 0 0-8 0"></path>
+                </svg>
+              </div>
+              <h3>Weather Patterns</h3>
+              <p id="weatherInsight">Loading weather insights...</p>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8D6E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"></path>
+                  <path d="m12 12 4 10 1.7-4.3L22 16Z"></path>
+                </svg>
+              </div>
+              <h3>Soil Management</h3>
+              <p id="soilInsight">Loading soil insights...</p>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64B5F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12h20"></path>
+                  <path d="M16 6 9 12l7 6"></path>
+                </svg>
+              </div>
+              <h3>Growth Optimization</h3>
+              <p id="growthInsight">Loading growth insights...</p>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9575CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                  <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                </svg>
+              </div>
+              <h3>Yield Potential</h3>
+              <p id="yieldInsight">Loading yield insights...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Recommendations -->
+        <div class="custom-recommendations reveal delay-3">
+          <h2 class="insights-header">Custom Recommendations</h2>
+          
+          <div class="recommendations-timeline" id="recommendationsTimeline">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- No Data Message -->
+      <div class="no-data-message" id="insightsNoDataMessage" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#8D6E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+          <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"></path>
+          <path d="M9 9h1"></path>
+          <path d="M9 13h6"></path>
+          <path d="M9 17h6"></path>
+        </svg>
+        <h2>No Data Available</h2>
+        <p>Please input your crop data and generate predictions first to see detailed insights.</p>
+        <a href="data-input.html" class="btn btn-primary">
+          Go to Data Input
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo and Description -->
+        <div>
+          <a href="index.html" class="logo">AGRO CYCLE</a>
+          <p class="footer-description">
+            Advanced crop yield prediction platform using machine learning to enhance agricultural productivity and sustainability.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-input.html">Data Input</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h3 class="footer-heading">Contact Us</h3>
+          <address class="footer-address">
+            <p>GM University</p>
+            <p>P.B. Road, Davanagere</p>
+            <p>Davangere - 577006</p>
+            <p>Karnataka</p>
+            <p style="margin-top: 1rem">
+              <a href="mailto:info@gmu.ac.in">info@gmu.ac.in</a>
+            </p>
+            <p>
+              <a href="tel:+916361219778">+91 6361 219 778</a>
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> AGRO CYCLE. All rights reserved.</p>
+        <p>Designed & Developed by <span style="font-weight: 500; color: var(--agro-green-dark)">RAJN TEAM</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
