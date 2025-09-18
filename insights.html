@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,6 +166,8 @@
               <h3>Yield Potential</h3>
               <p id="yieldInsight">Loading yield insights...</p>
             </div>
+            <button id="fetchWeatherBtn">Get Weather Forecast</button>
+            <div id="weatherResult"></div>
           </div>
         </div>
 
@@ -198,6 +199,14 @@
             <path d="m12 5 7 7-7 7"></path>
           </svg>
         </a>
+      </div>
+
+      <!-- Weather Forecast Section -->
+      <div class="weather-forecast-section reveal delay-4">
+        <h2 class="insights-header">Weather Forecast</h2>
+        
+        <button id="fetchWeatherBtn">Get Weather Forecast</button>
+        <div id="weatherResult"></div>
       </div>
     </div>
   </section>
@@ -252,5 +261,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="scripts.js"></script>
+  <script src="weather/weatherDisplay.js"></script>
 </body>
 </html>
